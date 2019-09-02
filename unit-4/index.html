@@ -5,12 +5,14 @@
 	<style type="text/css">
 	body{
 		margin:0;
+		background-color:#FFCCE5;
 	}
 #rainbow{
 	--size:50px;
 	--hue:0;
 	font-size: 0;
 	}
+
 .fuse{
 	transition: all .3s;
 	height:var(--size);
@@ -18,7 +20,9 @@
 	background: hsl(var(--hue),90%,70%);
 	display: inline-block;
 	border-radius: 100px;
+
 }
+
 #howManyRainbowStripsDoYouWantHeu{
 	padding: 0.5em;
 	width: 2em;
@@ -36,7 +40,7 @@ button{
 </style>
 </head>
 <body>
-	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="25">
+	<input type="number" id="howManyRainbowStripsDoYouWantHeu" min="0" max="999" value="360">
 	<button onclick="rainbowHaiDooNoy()">Go!</button>
 	<button onclick="animationHaiDooNoy()">Play!</button>
 	<button onclick="stopanimationHaiDooNoy()">Stop!</button>
@@ -52,7 +56,7 @@ button{
 				setTimeout(function(){
 				rainbow.innerHTML += `<div class="fuse" style="--hue:${i*(360/theNum)}"></div>`;
 				console.log(i);
-				},100*(i));
+				},10*(i));
 
 			}
 		}
@@ -78,6 +82,8 @@ button{
 			clearInterval(thePlay);
 			theFuse[j].style.transform = "scale(1)";
 		}
+
+		
 	</script>
 </body>
 </html>
